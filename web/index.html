@@ -1,360 +1,375 @@
 <!doctype html>
 <html lang="en">
-<head>   
-    <script type="module" src="jvs.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1V9 Nuvens</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Estilo da Navbar */
-        .navbar-custom {
-            background-color: #ffffff;
-            border-bottom: 2px solid #007bff;
-        }
-        .navbar-brand img {
-            width: 90px;
-            height: auto;
-        }
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
-            color: #007bff;
-            padding: 0 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #0056b3;
-        }
-        .button-shop-now {
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-        .button-shop-now:hover {
-            background-color: #0056b3;
-        }
-        /* Estilo do conteúdo central */
-        .hero-section {
-            background-color: #333;
-            color: #ffffff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .hero-section h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        .hero-section p {
-            font-size: 1.2rem;
-            margin-top: 20px;
-            color: #b3b3b3;
-        }
-        /* Ajuste da largura dos itens e espaçamento */
-        .carousel-item-content {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        width: 80%; /* Reduz um pouco a largura das imagens */
-        margin: 0 auto; /* Centraliza cada item na coluna */
-        transition: transform 0.3s;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
 
-        .carousel-item .col-md-3 {
-            padding-top: 75px;
-            padding-bottom: 75px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
+<head>
+  <script type="module" src="jvs.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1V9 Nuvens</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilo da Navbar */
+    .navbar-custom {
+      background-color: #ffffff;
+      border-bottom: 2px solid #007bff;
+    }
 
-        .carousel-item-content:hover {
-        transform: scale(1.05);
-        }
+    .navbar-brand img {
+      width: 90px;
+      height: auto;
+    }
 
-        .main-image {
-        display: block;
-        }
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+      color: #007bff;
+      padding: 0 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-        .hover-image {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        }
+    .navbar-nav .nav-link:hover {
+      color: #0056b3;
+    }
+
+    .button-shop-now {
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .button-shop-now:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilo do conteúdo central */
+    .hero-section {
+      background-color: #333;
+      color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #b3b3b3;
+    }
+
+    /* Ajuste da largura dos itens e espaçamento */
+    .carousel-item-content {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      width: 80%;
+      /* Reduz um pouco a largura das imagens */
+      margin: 0 auto;
+      /* Centraliza cada item na coluna */
+      transition: transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-item .col-md-3 {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .carousel-item-content:hover {
+      transform: scale(1.05);
+    }
+
+    .main-image {
+      display: block;
+    }
+
+    .hover-image {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
 
 
-        .carousel-item-content:hover .hover-image {
-        display: block;
-        }
+    .carousel-item-content:hover .hover-image {
+      display: block;
+    }
 
-        /* Blush azul com opacidade na parte inferior */
-        .overlay {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 128, 0.7); /* Blush em azul */
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 1.2em;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: opacity 0.3s;
-        }
+    /* Blush azul com opacidade na parte inferior */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 128, 0.7);
+      /* Blush em azul */
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: opacity 0.3s;
+    }
 
-        .carousel-link {
-        text-decoration: none;
-        }
+    .carousel-link {
+      text-decoration: none;
+    }
 
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 128, 0.7);
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-        }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 128, 0.7);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+    }
 
-        .carousel-control-prev {
-            left: -25px; /* Ajusta a posição do botão para a esquerda */
-        }
+    .carousel-control-prev {
+      left: -25px;
+      /* Ajusta a posição do botão para a esquerda */
+    }
 
-        .carousel-control-next {
-            right: -25px; /* Ajusta a posição do botão para a direita */
-        }
+    .carousel-control-next {
+      right: -25px;
+      /* Ajusta a posição do botão para a direita */
+    }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-image: none;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-image: none;
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-        .carousel-control-prev-icon::before {
-            content: '◄'; /* Ícone de seta para a esquerda */
-        }
+    .carousel-control-prev-icon::before {
+      content: '◄';
+      /* Ícone de seta para a esquerda */
+    }
 
-        .carousel-control-next-icon::before {
-            content: '►'; /* Ícone de seta para a direita */
-        }
-
-    </style>
+    .carousel-control-next-icon::before {
+      content: '►';
+      /* Ícone de seta para a direita */
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../images/logo.png" alt="Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto my-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="loja.html">Loja</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Sobre</a>
-                    </li>
-                </ul>
-                <a href="loja.html" class="button-shop-now">Carrinho</a>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="hero-section">
-        <h1>Bem vindo, a 1V9 Nuvens</h1>
-        <p>A espera acabou. Prepare-se para conhecer a jornada e a história de um dos mais novos times de e-sports da região oeste do Paraná.</p>
-        <a href="#" class="button-shop-now">Meet the Team</a>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../images/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto my-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loja.html">Loja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html">Sobre</a>
+          </li>
+        </ul>
+        <a href="loja.html" class="button-shop-now">Carrinho</a>
+      </div>
     </div>
-    
-    <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+  </nav>
+
+  <div class="hero-section">
+    <h1>Bem vindo, a 1V9 Nuvens</h1>
+    <p>A espera acabou. Prepare-se para conhecer a jornada e a história de um dos mais novos times de e-sports da região
+      oeste do Paraná.</p>
+    <a href="#" class="button-shop-now">Meet the Team</a>
+  </div>
+
+  <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
         <div class="row justify-content-center">
-            <div class="col-md-3">
+          <div class="col-md-3">
             <a href="pagina1.html" target="_blank" class="carousel-link">
-                <div class="carousel-item-content">
+              <div class="carousel-item-content">
                 <img src="images/camisa 1.jpg" class="w-100 main-image" alt="Counter-Strike 2">
                 <img src="images/camisa 2.jpg" class="w-100 hover-image" alt="Counter-Strike 2 Hover">
                 <div class="overlay">Counter-Strike 2</div>
-                </div>
+              </div>
             </a>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <a href="pagina2.html" target="_blank" class="carousel-link">
-                <div class="carousel-item-content">
+              <div class="carousel-item-content">
                 <img src="images/camisa 1.jpg" class="w-100 main-image" alt="Dota 2">
                 <img src="images/camisa 2.jpg" class="w-100 hover-image" alt="Dota 2 Hover">
                 <div class="overlay">Dota 2</div>
-                </div>
+              </div>
             </a>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <a href="pagina3.html" target="_blank" class="carousel-link">
-                <div class="carousel-item-content">
+              <div class="carousel-item-content">
                 <img src="images/camisa 1.jpg" class="w-100 main-image" alt="EA Sports FC">
                 <img src="images/camisa 2.jpg" class="w-100 hover-image" alt="EA Sports FC Hover">
                 <div class="overlay">EA Sports FC</div>
-                </div>
+              </div>
             </a>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <a href="pagina4.html" target="_blank" class="carousel-link">
-                <div class="carousel-item-content">
+              <div class="carousel-item-content">
                 <img src="images/camisa 1.jpg" class="w-100 main-image" alt="Halo Infinite">
                 <img src="images/camisa 2.jpg" class="w-100 hover-image" alt="Halo Infinite Hover">
                 <div class="overlay">Halo Infinite</div>
-                </div>
+              </div>
             </a>
-            </div>
+          </div>
         </div>
+      </div>
+
+
     </div>
 
-        
-    </div>
-    
     <!-- Botões de controle -->
     <a class="carousel-control-prev" href="#multiCarousel" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only"><</span>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">
+        << /span>
     </a>
     <a class="carousel-control-next" href="#multiCarousel" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">></span>
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">></span>
     </a>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 <!-- Footer -->
 <footer class="bg-body-tertiary text-center">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-  
-        <!-- Twitter -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-twitter"></i
-        ></a>
-  
-        <!-- Google -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-google"></i
-        ></a>
-  
-        <!-- Instagram -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-instagram"></i
-        ></a>
-  
-        <!-- Linkedin -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-  
-        <!-- Github -->
-        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-github"></i
-        ></a>
-      </section>
-      <!-- Section: Social media -->
-  
-      <!-- Section: Form -->
-      <section class="">
-        <form action="">
-          <!--Grid row-->
-          <div class="row d-flex justify-content-center">
-            <!--Grid column-->
-            <div class="col-auto">
-              <p class="pt-2">
-                <strong>Inscreva-se para as novidades</strong>
-              </p>
-            </div>
-            <!--Grid column-->
-  
-            <!--Grid column-->
-            <div class="col-md-5 col-12">
-              <!-- Email input -->
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="form5Example24" class="form-control" />
-                <label class="form-label" for="form5Example24">Endereço de Email</label>
-              </div>
-            </div>
-            <!--Grid column-->
-  
-            <!--Grid column-->
-            <div class="col-auto">
-              <!-- Submit button -->
-              <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                Increva-se
-              </button>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </form>
-      </section>
-      <!-- Section: Form -->
-  
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          Se increva para receber noticias dos times e dos mais novos produtos da 1v9 em primera mão
-          e aproveite todas as novidades
-        </p>
-      </section>
-      <!-- Section: Text -->
-  
-      <!-- Section: Links -->
-      <section class="">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-linkedin-in"></i></a>
+
+      <!-- Github -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+          class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
         <!--Grid row-->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Inscreva-se para as novidades</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="email" id="form5Example24" class="form-control" />
+              <label class="form-label" for="form5Example24">Endereço de Email</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="submit" class="border-secondary btn btn-outline mb-4">
+              Inscreva-se
+            </button>
+          </div>
+          <!--Grid column-->
         </div>
         <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2024 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">1v9nuvens.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Se inscreva para receber noticias dos times e dos mais novos produtos da 1v9 em primera mão
+        e aproveite todas as novidades
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">1v9nuvens.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
 </html>

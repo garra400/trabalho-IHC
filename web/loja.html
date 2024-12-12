@@ -170,44 +170,44 @@
     <!-- Conteúdo Principal -->
     <div class="container my-5" style="display: flex; justify-content: space-between; margin-left: 50px;">
         <!-- Barra Lateral (Fixa à esquerda) -->
-        <div class="sidebar" style="width: 250px; padding-right: 20px;">
-            <h4>Categorias</h4>
-            <a href="#">Início</a><br>
-            <a href="#">Casacos</a><br>
-            <a href="#">Casacos - Masculino</a><br>
-            <a href="#">Casacos - Feminino</a><br>
-            <a href="#">Jaquetas</a><br>
-            <a href="#">Camisetas</a><br>
-            <a href="#">Camisetas - Infantil</a><br>
-            <a href="#">Camisetas - Masculino</a><br>
-            <a href="#">Camisetas - Feminino</a><br>
-            <a href="#">Camisetas de Manga Longa</a><br>
-            <a href="#">Calças</a><br>
-            <a href="#">Bermudas</a><br>
-            <a href="#">Suéteres</a><br>
-            <a href="#">Camisetas</a><br>
+        <div class="row">
+            <div class="sidebar col-12 col-md-3" style="width: 250px; padding-right: 20px;">
+                <h4>Categorias</h4>
+                <a href="#">Início</a><br>
+                <a href="#">Casacos</a><br>
+                <a href="#">Casacos - Masculino</a><br>
+                <a href="#">Casacos - Feminino</a><br>
+                <a href="#">Jaquetas</a><br>
+                <a href="#">Camisetas</a><br>
+                <a href="#">Camisetas - Infantil</a><br>
+                <a href="#">Camisetas - Masculino</a><br>
+                <a href="#">Camisetas - Feminino</a><br>
+                <a href="#">Camisetas de Manga Longa</a><br>
+                <a href="#">Calças</a><br>
+                <a href="#">Bermudas</a><br>
+                <a href="#">Suéteres</a><br>
+                <a href="#">Camisetas</a><br>
 
-            <h4>Cor</h4>
-            <a href="#" class="color-box" style="background-color: black;"></a>
-            <a href="#" class="color-box" style="background-color: blue;"></a>
-            <a href="#" class="color-box" style="background-color: gray;"></a>
-            <a href="#" class="color-box" style="background-color: #808080;"></a>
-            <a href="#" class="color-box"
-                style="background-color: white; border: 1px solid #ccc;"></a><br>
+                <h4>Cor</h4>
+                <a href="#" class="color-box" style="background-color: black;"></a>
+                <a href="#" class="color-box" style="background-color: blue;"></a>
+                <a href="#" class="color-box" style="background-color: gray;"></a>
+                <a href="#" class="color-box" style="background-color: #808080;"></a>
+                <a href="#" class="color-box" style="background-color: white; border: 1px solid #ccc;"></a><br>
 
-            <h4>Preço</h4>
-            <a href="#">R$0-R$25</a><br>
-            <a href="#">R$26-R$50</a><br>
-            <a href="#">R$51-R$100</a><br>
-            <a href="#">R$101-R$150</a><br>
-            <a href="#">R$151-R$200</a><br>
-        </div>
+                <h4>Preço</h4>
+                <a href="#">R$0-R$25</a><br>
+                <a href="#">R$26-R$50</a><br>
+                <a href="#">R$51-R$100</a><br>
+                <a href="#">R$101-R$150</a><br>
+                <a href="#">R$151-R$200</a><br>
+            </div>
 
-        <!-- Cards -->
-        <div class="row" style="flex: 1;">
-            <div class="col-md-4">
+            <!-- Cards -->
+            <div class="col-12 col-md-3">
                 <div>
-                    <img src="images/camisa 1.jpg" class="card-img-top" alt="Produto 1" style="height: 400px; object-fit: cover;">
+                    <img src="images/camisa 1.jpg" class="card-img-top" alt="Produto 1"
+                        style="height: 400px; object-fit: cover;">
                     <div class="card-body" style="height: 200px;">
                         <h5 class="card-title">Camisa Oficial - Counter-Strike</h5>
                         <p class="card-text">Produto oficial do time 1V9 Nuvens para os fãs de Counter-Strike.</p>
@@ -216,9 +216,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
                 <div>
-                    <img src="images/camisa 2.jpg" class="card-img-top" alt="Produto 2" style="height: 400px; object-fit: cover;">
+                    <img src="images/camisa 2.jpg" class="card-img-top" alt="Produto 2"
+                        style="height: 400px; object-fit: cover;">
                     <div class="card-body" style="height: 200px;">
                         <h5 class="card-title">Camisa Oficial - League of Legends</h5>
                         <p class="card-text">Produto oficial do time 1V9 Nuvens para os fãs de biel bits.</p>
@@ -227,9 +228,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
                 <div>
-                    <img src="images/camisa 1.jpg" class="card-img-top" alt="Produto 3" style="height: 400px; object-fit: cover;">
+                    <img src="images/camisa 1.jpg" class="card-img-top" alt="Produto 3"
+                        style="height: 400px; object-fit: cover;">
                     <div class="card-body" style="height: 200px;">
                         <h5 class="card-title">Camisa Oficial - EA Sports FC</h5>
                         <p class="card-text">Produto oficial do time 1V9 Nuvens para os fãs de EA Sports FC.</p>
@@ -299,8 +301,8 @@
                         <!--Grid column-->
                         <div class="col-auto">
                             <!-- Submit button -->
-                            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
-                                Increva-se
+                            <button data-mdb-ripple-init type="submit" class="border-secondary btn btn-outline mb-4">
+                                Inscreva-se
                             </button>
                         </div>
                         <!--Grid column-->
@@ -313,7 +315,7 @@
             <!-- Section: Text -->
             <section class="mb-4">
                 <p>
-                    Se increva para receber noticias dos times e dos mais novos produtos da 1v9 em primera mão
+                    Se inscreva para receber noticias dos times e dos mais novos produtos da 1v9 em primera mão
                     e aproveite todas as novidades
                 </p>
             </section>
@@ -343,13 +345,13 @@
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+            <div class="vw-plugin-top-wrapper"></div>
         </div>
-      </div>
-      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-      </script>
+    </script>
 </body>
 
 </html>
